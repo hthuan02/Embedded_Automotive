@@ -60,7 +60,7 @@ _VD:_ Cuộc gọi điện thoại.
 
  _VD:_ MCU A(Master) gửi dữ liệu đến MCU B(Slave), thì mỗi lần dây MOSI gửi 1 bit dữ liệu đi thì sẽ kèm 1 xung Clock (Khi nào xung Clock lên 1 thì MCU B đọc được).
 
-▶️▶️▶️ Đây là quá trình đầy đủ
+▶️▶️▶️ **Đây là quá trình đầy đủ**
 
 - Bắt đầu quá trình, thì 1 Master chọn 1 Slave để giao tiếp, mà để chọn đc Slave giao tiếp thì Master kéo chân SS/CS của Slave tương ứng xuống mức 0, báo hiệu muốn truyền - nhận.
 
