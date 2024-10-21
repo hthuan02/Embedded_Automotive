@@ -18,12 +18,15 @@ Vì vậy, các chuẩn giao tiếp ra đời như: SPI, I2C, UART,...
 ### 2. Ba chế độ của truyền nhận dữ liệu:
 
 - **Đơn công**: Dữ liệu truyền theo 1 chiều, từ thiết bị gửi đến thiết bị nhận mà không có phản hồi ngược lại (Một thiết bị chỉ có thể truyền hoặc nhận).
+
 _VD:_ Máy phát và máy thu (kết nối micro đến loa. Chỉ có truyền âm thanh một chiều từ micro đến loa).
 
 - **Bán song công**: Dữ liệu truyền theo 2 chiều, nhưng không đồng thời. Tại 1 thời điểm chỉ một bên có thể truyền.
+
 _VD:_ Bộ đàm.
 
 - **Song công**: Dữ liệu truyền theo 2 chiều đồng thời; cả 2 bên có thể truyền hoặc nhận cùng một thời điểm. ->> SPI
+
 _VD:_ Cuộc gọi điện thoại.
 
 ### 3. SPI
