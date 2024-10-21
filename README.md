@@ -73,9 +73,21 @@ _VD:_ Cuộc gọi điện thoại.
 
 **4 Chế độ hoạt động của SPI**
 
+**CPOL**: Xác định mức điện áp của tín hiệu SCK.
 
+- CPOL = 0: Ở trạng thái rãnh SCK = 0, khi truyền dữ liệu SCK lên 1.
 
+- CPOL = 1: Ở trạng thái rãnh SCK = 1, khi truyền dữ liệu SCK xuống 0.
 
+**CPHA**: Giúp chúng ta biết được thời điểm nào đọc dữ liệu, thời điểm nào chuyển dữ liệu.
+
+- CPHA = 0: Dữ liệu sẽ đến trước khi tín hiệu xung Clock đọc được.
+
+- CPHA = 1: Clock được hình thành trước khi dữ liệu đến.
+
+▶️▶️▶️Dựa vào CPOL và CPHA, chúng ta có 4 chế độ SPI
+
+![CPOL và CPHA](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png)
 
 
 
