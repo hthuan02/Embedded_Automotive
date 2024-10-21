@@ -51,7 +51,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 -  **SS**(Slave Select/CS-Chip Select): Là chân giúp Master chọn được những Slave để giao tiếp, truyền dữ liệu. Mỗi Slave ứng với 1 chân SS, nên Master muốn giao tiếp với Slave nào thì sẽ kéo dây SS về mức 0.
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png" alt="CPOL và CPHA" width="550"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png" alt="CPOL và CPHA" width="660"/>
 
 
 
