@@ -32,7 +32,7 @@ _VD:_ Cuộc gọi điện thoại.
 ### 3. SPI
 (SPI - Serial Peripheral Interface)
 
-> Là chuẩn gao tiếp nối tiếp, đồng bộ.
+> Là chuẩn gao tiếp nối tiếp, đồng bộ
 >
 > Hoạt động ở chế độ song công (Có thể truyền hoặc nhận cùng 1 thời điểm).
 >
@@ -40,6 +40,7 @@ _VD:_ Cuộc gọi điện thoại.
 > 
 > Sử dụng 4 giây giao tiếp: SCK, MISO, MOSI, SS.
 
+->> Đồng bộ: Là sự thống nhất của 2 MCU thời điểm nào là đọc, khi nào là ghi tín hiệu.
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/SPI.jpg)
 
 - **SCK**(Serial Clock): Là dây tạo ra tín hiệu đồng bộ. Master tạo ra xung tín hiệu truyền đến Slave nhận.
@@ -50,6 +51,27 @@ _VD:_ Cuộc gọi điện thoại.
 
 -  **SS**(Slave Select/CS-Chip Select): Là chân giúp Master chọn được những Slave để giao tiếp, truyền dữ liệu. Mỗi Slave ứng với 1 chân SS, nên Master muốn giao tiếp với Slave nào thì sẽ kéo dây SS về mức 0.
 
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/Sodo_SPI.png" alt="Sơ đồ nối dây" width="440"/>
+
+
+**Quá trình truyền - nhận dữ liệu của SPI?**
+
+- Quá trình truyền - nhận Bit dữ liệu trong SPI: Chân SCK là chân tín hiệu đồng bộ ( 1 xung Clock). Mỗi lần gửi dữ liệu là kèm 1 xung Clock.
+
+ _VD:_ MCU A(Master) gửi dữ liệu đến MCU B(Slave), thì mỗi lần dây MOSI gửi 1 bit dữ liệu đi thì sẽ kèm 1 xung Clock (Khi nào xung Clock lên 1 thì MCU B đọc được).
+
+▶️▶️▶️ Đây là quá trình đầy đủ
+
+- Bắt đầu quá trình, thì 1 Master chọn 1 Slave để giao tiếp, mà để chọn đc Slave giao tiếp thì Master kéo chân SS/CS của Slave tương ứng xuống mức 0, báo hiệu muốn truyền - nhận.
+
+- Sau khi chọn được Slave, Master sẽ cấp cho Slave 1 xung Clock, tùy vào chế độ Master cài đặt. Cứ 1 xung clock truyền đi thì đồng thời gửi tín hiệu đi qua chân (MOSI) và nhận tín hiệu này vào bằng chân (MISO).
+->> Tại 1 thời điểm, vừa nhận vừa truyên nên nó là giao tiếp song công.
+
+- Với mỗi Clock truyền đi, thì sẽ có 1 bit được truyền từ Master -> Slave, hoặc 1 bit Master nhận từ Slave.
+
+- Sau khi truyền 1 bit kèm 1 clock, các bên nhận sẽ cập nhật lại thanh ghi và dịch 1 bit, và lặp lại quá trình đến khi đủ 8 bit trong thanh ghi. Cuối cùng, khi thanh ghi đủ 8 bit rồi thì đưa chân SS/CS lên lại 1, để dừng quá trình giao tiếp.
+
+**4 Chế độ hoạt động của SPI**
 
 
 
