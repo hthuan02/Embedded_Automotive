@@ -1,7 +1,7 @@
 
 # Bài 4: Communication Protocols
 
-### 1.Truyền nhận dữ liệu là gì?
+## 1.Truyền nhận dữ liệu là gì?
 
 > Là quá trình trao đổi tín hiệu điện áp của MCU A đến MCU B. Gồm các tín hiệu 0 và 1(0v và 3.3V hoặc 5V).
 
@@ -15,7 +15,7 @@ _VD: Đối với 1 chuỗi như `hello`_
 
 Vì vậy, để phân biệt các bit liền kề giống thì các chuẩn giao tiếp ra đời như: SPI, I2C, UART,...
 
-### 2. Ba chế độ của truyền nhận dữ liệu:
+## 2. Ba chế độ của truyền nhận dữ liệu:
 
 - **Đơn công**: Dữ liệu truyền theo 1 chiều, từ thiết bị gửi đến thiết bị nhận mà không có phản hồi ngược lại (Một thiết bị chỉ có thể truyền hoặc nhận).
 
@@ -29,7 +29,7 @@ _VD:_ Bộ đàm.
 
 _VD:_ Cuộc gọi điện thoại.
 
-### 3. SPI
+## 3. SPI
 (SPI - Serial Peripheral Interface)
 
 > Là chuẩn gao tiếp nối tiếp, đồng bộ
@@ -54,7 +54,7 @@ _VD:_ Cuộc gọi điện thoại.
 <img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/Sodo_SPI.png" alt="Sơ đồ nối dây" width="440"/>
 
 
-**Quá trình truyền - nhận dữ liệu của SPI?**
+## Quá trình truyền - nhận dữ liệu của SPI?
 
 - Quá trình truyền - nhận Bit dữ liệu trong SPI: Chân SCK là chân tín hiệu đồng bộ ( 1 xung Clock). Mỗi lần gửi dữ liệu là kèm 1 xung Clock.
 
@@ -71,7 +71,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 - Sau khi truyền 1 bit kèm 1 clock, các bên nhận sẽ cập nhật lại thanh ghi và dịch 1 bit, và lặp lại quá trình đến khi đủ 8 bit trong thanh ghi. Cuối cùng, khi thanh ghi đủ 8 bit rồi thì đưa chân SS/CS lên lại 1, để dừng quá trình giao tiếp.
 
-**4 Chế độ hoạt động của SPI**
+## 4 Chế độ hoạt động của SPI
 
 **CPOL**: Xác định mức điện áp của tín hiệu SCK.
 
@@ -89,6 +89,6 @@ _VD:_ Cuộc gọi điện thoại.
 
 <img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png" alt=" " width="660"/>
 
-### 4. I2C
+## 4. I2C
 
-### 5. UART
+## 5. UART
