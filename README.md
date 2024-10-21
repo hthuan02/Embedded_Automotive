@@ -26,7 +26,7 @@ _VD:_ Bộ đàm.
 - **Song công**: Dữ liệu truyền theo 2 chiều đồng thời; cả 2 bên có thể truyền hoặc nhận cùng một thời điểm. ->> SPI
 _VD:_ Cuộc gọi điện thoại.
 
-### I. SPI
+### 3. SPI
 (SPI - Serial Peripheral Interface)
 
 > Là chuẩn gao tiếp nối tiếp, đồng bộ.
@@ -39,6 +39,6 @@ _VD:_ Cuộc gọi điện thoại.
 
 
 
-### II. I2C
+### 4. I2C
 
-### III. UART
+### 5. UART
