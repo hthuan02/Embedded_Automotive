@@ -40,7 +40,9 @@ _VD:_ Cuộc gọi điện thoại.
 > 
 > Sử dụng 4 giây giao tiếp: SCK, MISO, MOSI, SS.
 
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/SPI.jpg)
 
+- SCK
 
 ### 4. I2C
 
