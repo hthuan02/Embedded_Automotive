@@ -41,7 +41,7 @@ _VD:_ Cuộc gọi điện thoại.
 > Sử dụng 4 giây giao tiếp: SCK, MISO, MOSI, SS.
 
 ->> Đồng bộ: Là sự thống nhất của 2 MCU thời điểm nào là đọc, khi nào là ghi tín hiệu.
-![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/SPI.jpg)
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/SPI.jpg)
 
 - **SCK**(Serial Clock): Là dây tạo ra tín hiệu đồng bộ. Master tạo ra xung tín hiệu truyền đến Slave nhận.
 
@@ -51,7 +51,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 -  **SS**(Slave Select/CS-Chip Select): Là chân giúp Master chọn được những Slave để giao tiếp, truyền dữ liệu. Mỗi Slave ứng với 1 chân SS, nên Master muốn giao tiếp với Slave nào thì sẽ kéo dây SS về mức 0.
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/Sodo_SPI.png" alt="Sơ đồ nối dây" width="440"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/Sodo_SPI.png" alt=" " width="440"/>
 
 
 ## Quá trình truyền - nhận dữ liệu của SPI?
