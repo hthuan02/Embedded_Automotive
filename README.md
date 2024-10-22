@@ -114,8 +114,38 @@ _VD:_ Cuộc gọi điện thoại.
 
 ## Quá trình truyền - nhận dữ liệu của I2C?
 
-Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận thấy 1 Clock thì nhận được 1 Bit để lưu vào bộ nhớ.(phút 60)
+Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận thấy 1 Clock thì nhận được 1 Bit để lưu vào bộ nhớ.
 
- 
+- Đầu tiên, ở trạng thái rảnh SDA và SCL đều ở mức 1. Master bắt đầu quá trình truyền bằng cách kéo SDA xuống mức 0 trước SCL (điều kiện bắt đầu).
 
+- Truyền địa chỉ: truyền theo 1 frame(khung) Master gửi 7 bit địa chỉ để chọn Slave mà nó muốn giao tiếp, kèm theo 1 bit R/W (để xác định việc ghi hoặc đọc dữ liệu).
+
+- Kiểm tra địa chỉ và bit R/W:
+
+  - Slave nhận địa chỉ từ Master và so sánh với địa chỉ của mình. Nếu trùng khớp,   - Slave sẽ kiểm tra bit R/W.
+  - R/W = 0: Master muốn ghi dữ liệu vào Slave(Write).
+  - R/W = 1: Master muốn đọc dữ liệu từ Slave(Read).
+
+- Xác nhận (ACK): Sau khi nhận được 8 bit (7 bit địa chỉ và 1 bit R/W), Slave gửi lại một bit ACK (bit xác nhận) bằng cách kéo SDA xuống mức 0.
+
+- Kiểm tra (ACK): Master chờ nhận bit ACK từ Slave. Nếu SDA = 0 (ACK thành công), Master tiếp tục truyền dữ liệu. Nếu SDA = 1 (ACK thất bại), Master sẽ sử dụng timer để kiểm tra, Nếu sau một khoảng thời gian mà SDA vẫn chưa xuống 0, Master sẽ gửi lại dữ liệu. Quá trình này tiếp tục cho đến khi đạt giới hạn số lần truyền, nếu không nhận được ACK, Master sẽ dừng quá trình I2C.
+  
+- Tiếp tục truyền: Sau khi nhận được ACK, Master tiếp tục gửi hoặc nhận 8 bit dữ liệu tiếp theo, với mỗi bit kèm theo 1 xung clock.
+
+- Kết thúc: Khi dữ liệu đã truyền hết, Master gửi tín hiệu kết thúc bằng cách đưa SDA và SCL lên mức 1 để dừng quá trình giao tiếp I2C.
+  
 ## 5. UART
+(Universal Asynchronous Receiver-)
+
+> Chuẩn giao tiếp nối tiếp, không đồng bộ.
+>
+> Hoạt động ở chế độ song công.
+>
+> Chỉ 2 thiết bị giao tiếp với nhau.
+>
+> Sử dụng 2 dây giao tiêp: TX, RX.
+
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/img_temp_6449845cb3ff48-87888352-85375715.png" alt=" " width="400"/>
+
+
+
