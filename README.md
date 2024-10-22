@@ -178,9 +178,13 @@ UART không có sự đồng bộ về gửi và nhận dữ liệu giữa 2 thi
    - Quy luật chẵn: (Số lượng Bit 1 của Data frame) + (Parity Bit) là số chẵn.
  
    - Quy luật lẻ: (Số lượng Bit 1 của Data frame) + (Parity Bit) là số lẻ.
+  
+  ▶️Nhược điểm: Không phát hiện được số Bit chẵn bị sai.
+  
+- Cuối cùng, stop bit: Có thể chiếm trong 1 Bit hoặc 2 Bit
+   
+   - Nếu 1 Bit: Đưa TX lên 1, delay thời gian trong 1 Bit để kết thúc quá trình.
  
-- 
-
-
+   - Nếu 2 Bit: Đưa TX lên 1, và thời gian gấp 2 lần thời gian braudrate ban đầu.
 
 
