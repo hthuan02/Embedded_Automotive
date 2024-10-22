@@ -135,7 +135,7 @@ Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận t
 - Kết thúc: Khi dữ liệu đã truyền hết, Master gửi tín hiệu kết thúc bằng cách đưa SDA và SCL lên mức 1 để dừng quá trình giao tiếp I2C.
   
 ## 5. UART
-(Universal Asynchronous Receiver-)
+(Universal Asynchronous Receiver-Transmitter)
 
 > Chuẩn giao tiếp nối tiếp, không đồng bộ.
 >
@@ -147,9 +147,9 @@ Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận t
 
 <img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/img_temp_6449845cb3ff48-87888352-85375715.png" alt=" " width="500"/>
 
-- **TX**(Transmit): Chân truyền dữ liệu.
+- ****(Transmit): Chân truyền dữ liệu.
 
-- **RX**(Receive): Chân nhận dữ liệu.
+- **Rx**(Receive): Chân nhận dữ liệu.
 
 UART không có sự đồng bộ về gửi và nhận dữ liệu giữa 2 thiết bị, giải pháp là tạo 1 timer. Vì mỗi MCU có tần số xung nhịp khác nhau, dẫn đến thời gian delay của timer 2 MCU sẽ khác. 
 
@@ -157,9 +157,30 @@ UART không có sự đồng bộ về gửi và nhận dữ liệu giữa 2 thi
 
 ## Quá trình truyền - nhận dữ liệu của UART?
 
-- Mỗi là truyền 1 là frame(khung), 1 frame bao gồm:
+- Mỗi lần truyền 1 là frame(khung), 1 frame bao gồm:
 
 <img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/1%20frame_uart.png" alt=" " width="500"/>
+
+- Start bit: Không truyền dữ liệu thì Tx, Rx = 1. Đầu tiên MCU A hạ chân Tx từ 1 xuống 0 để truyền dữ liệu, sau đó delay 1 khoảng thời gian trong 1 Bit.
+
+- Khi MCU A hạ Tx = 0, thì MCU B sẽ Rx sẽ đọc dữ liệu từ Tx(Rx =1), sau khoảng thời gian delay. MCU B sẽ hạ RX = 0 để tiên hành ghi dữ liệu
+
+- Data frame: Là dữ liệu muốn gửi VD:`hello`, tùy vào cài đặt ban đầu 5-9 Bit. Thông thường là 8 Bit.
+
+- Để gửi data frame:
+   - MCU A(bên gửi) sau khoảng thời gian delay sẽ gửi 1 Bit dữ liệu rồi dịch Bit, tuần tự đến khi nào hết 8 Bit dữ liệu.
+   - MCU B(bên nhận), sau khoảng thời gian từ sẽ đọc dữ liệu rồi dịch, tuần tự hết 8. MCU B sẽ nhận dữ liệu cùng với thời gian bên MCU A gửi.
+
+  ▶️ Gửi và nhận cùng 1 thời điểm
+
+- Sau khi gửi dữ liệu xong thì có 1 Bit Optional(Bit tùy chọn): Có Parity Bit, không có Parity Bit -> Giúp kiểm tra lỗi trong data frame: Quy luật chẵn và lẻ
+
+   - Quy luật chẵn: (Số lượng Bit 1 của Data frame) + (Parity Bit) là số chẵn.
+ 
+   - Quy luật lẻ: (Số lượng Bit 1 của Data frame) + (Parity Bit) là số lẻ.
+ 
+- 
+
 
 
 
