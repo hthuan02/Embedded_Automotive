@@ -87,7 +87,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 ▶️▶️▶️Dựa vào CPOL và CPHA, chúng ta có 4 chế độ SPI
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png" alt=" " width="660"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/CPOL_CPHA.png" alt=" " width="660"/>
 
 ## 4. I2C
 (Inter-Integrated Circuit)
