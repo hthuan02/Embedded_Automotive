@@ -71,7 +71,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 - Sau khi truyền 1 bit kèm 1 clock, các bên nhận sẽ cập nhật lại thanh ghi và dịch 1 bit, và lặp lại quá trình đến khi đủ 8 bit trong thanh ghi. Cuối cùng, khi thanh ghi đủ 8 bit rồi thì đưa chân SS/CS lên lại 1, để dừng quá trình giao tiếp.
 
-## 4 Chế độ hoạt động của SPI
+## Bốn chế độ hoạt động của SPI?
 
 **CPOL**: Xác định mức điện áp của tín hiệu SCK.
 
@@ -102,5 +102,14 @@ _VD:_ Cuộc gọi điện thoại.
 
 <img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/unnamed.png" alt=" " width="600"/>
 
+- **SCL**(Serial Clock): Là dây tạo tín hiệu đồng bộ, truyền-nhận dữ liệu với các Slave.
+
+- **SDA**(Serial): Chân chứa dữ liệu được truyền đi.
+
+## Chế độ hoạt động I2C?
+
+> Khác với SPI(chế độ hoạt động là 1 0), còn ở I2C chế độ hoạt động là Open Drawn
+
+ 
 
 ## 5. UART
