@@ -41,7 +41,17 @@ _VD:_ Cuộc gọi điện thoại.
 > Sử dụng 4 giây giao tiếp: SCK, MISO, MOSI, SS.
 
 ->> Đồng bộ: Là sự thống nhất của 2 MCU thời điểm nào là đọc, khi nào là ghi tín hiệu.
-![](https://github.com/hthuan02/Embedded_Automotiveimg/Sodo_SPI.png" alt="Sơ đồ nối dây" width="440"/>
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/SPI.jpg)
+
+- **SCK**(Serial Clock): Là dây tạo ra tín hiệu đồng bộ. Master tạo ra xung tín hiệu truyền đến Slave nhận.
+
+-  **MISO**(Master Input Slave Ouput): Master nhận dữ liệu - Slave đẩy dữ liệu ra. Tín hiệu tạo bởi Slave và truyền đến Master.
+
+-  **MOSI**(Master Output Slave Input): Master truyền đẩy dữ liệu - Slave nhận. Tín hiệu tạo bởi Master và truyền đến Slave nhận.
+
+-  **SS**(Slave Select/CS-Chip Select): Là chân giúp Master chọn được những Slave để giao tiếp, truyền dữ liệu. Mỗi Slave ứng với 1 chân SS, nên Master muốn giao tiếp với Slave nào thì sẽ kéo dây SS về mức 0.
+
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/Sodo_SPI.png" alt="Sơ đồ nối dây" width="440"/>
 
 
 ## Quá trình truyền - nhận dữ liệu của SPI?
@@ -77,7 +87,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 ▶️▶️▶️Dựa vào CPOL và CPHA, chúng ta có 4 chế độ SPI
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/CPOL_CPHA.png" alt=" " width="660"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/CPOL_CPHA.png" alt=" " width="660"/>
 
 ## 4. I2C
 (Inter-Integrated Circuit)
