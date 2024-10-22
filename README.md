@@ -152,6 +152,7 @@ Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận t
 - **RX**(Receive): Chân nhận dữ liệu.
 
 UART không có sự đồng bộ về gửi và nhận dữ liệu giữa 2 thiết bị, giải pháp là tạo 1 timer. Vì mỗi MCU có tần số xung nhịp khác nhau, dẫn đến thời gian delay của timer 2 MCU sẽ khác. 
+
 ▶️▶️▶️ Baundrate là tham số để thống nhất lại, đồng bộ thời gian truyền-nhận dữ liệu và thời gian delay. (Số Bit truyền/s)
 
 
