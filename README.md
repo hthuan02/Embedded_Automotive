@@ -110,7 +110,7 @@ _VD:_ Cuộc gọi điện thoại.
 
 > Khác với SPI chế độ hoạt động là (0) (1), còn ở I2C chế độ hoạt động là Open Drain. 
 
-**Open Drain**: Khi I2C muốn điều khiển đường bus, sẽ hạ xuống là 0. Khi không điều khiển, thì sẽ thả trôi đường ở mức điện áp floating(sẽ không hiểu là mức 0 hay 1). Nên cần điện trở kéo lên nguồn thì bus mới lên 1.
+**Open Drain**: Khi I2C muốn điều khiển đường bus, sẽ hạ xuống là 0. Khi không điều khiển, thì sẽ thả trôi đường dây ở mức điện áp floating(sẽ không hiểu là mức 0 hay 1). Nên cần điện trở kéo lên nguồn thì bus mới lên 1.
 
 ## Quá trình truyền - nhận dữ liệu của I2C?
 
