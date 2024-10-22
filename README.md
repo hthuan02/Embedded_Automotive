@@ -159,7 +159,7 @@ UART không có sự đồng bộ về gửi và nhận dữ liệu giữa 2 thi
 
 - Mỗi là truyền 1 là frame(khung), 1 frame bao gồm:
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/1%20frame_uart.png" alt=" " width="350"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/1%20frame_uart.png" alt=" " width="500"/>
 
 
 
