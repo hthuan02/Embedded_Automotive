@@ -145,7 +145,10 @@ Giống với SPI, 1 bit truyền đi thì kèm theo 1 Clock. Còn bên nhận t
 >
 > Sử dụng 2 dây giao tiêp: TX, RX.
 
-<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/img_temp_6449845cb3ff48-87888352-85375715.png" alt=" " width="400"/>
+<img src="https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai4_Comunication%20Protocols/img/img_temp_6449845cb3ff48-87888352-85375715.png" alt=" " width="500"/>
 
+- **TX**(Transmit): Chân truyền dữ liệu.
 
+- **RX**(Receive): Chân nhận dữ liệu.
+  
 
