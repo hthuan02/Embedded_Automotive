@@ -27,6 +27,10 @@
 
 - Nháy LED PC13-> Dùng thanh ghi CRH (**GPIOx_CRH**), CRH có 2 loại là CRFx và MODEx.
 
+*Push-pull: 1 0
+
+*Open drain: Chỉ kéo xuống 0, không làm gì thì floating(lơ lửng).
+
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai1_Setup-KeilC/cau_hinh_che_do_chan.png)
 
 
