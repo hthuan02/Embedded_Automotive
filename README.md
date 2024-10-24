@@ -13,7 +13,7 @@
 
 - Cấp xung clock cho GPIO từ APB2 bằng thanh ghi RCC_APB2ENR.
   
-(RCC: Module đang làm việc; APB: Tên đường bus; 2ENR: Chức năng ngoại vi)
+  (RCC: Module đang làm việc; APB: Tên đường bus; 2ENR: Chức năng ngoại vi)
 
 ```c
    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; // Cap clock cho ngoai vi
@@ -23,7 +23,12 @@
 
 - Sử dụng 2 thanh ghi GPIOx_CRL và GPIOx_CRH để cấu hình chân PC13 làm ngõ ra Push-Pull, tốc độ 50MHz.
 
-    (Một GPIO có 16 chân, chia 2 thanh ghi CRL: 0-7; CRH: 8-15)
+  (Một GPIO có 16 chân, chia 2 thanh ghi CRL: 0-7; CRH: 8-15)
+
+- Nháy LED PC13-> Dùng thanh ghi CRH (**GPIOx_CRH**), CRH có 2 loại là CRFx và MODEx.
+
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai1_Setup-KeilC/cau_hinh_che_do_chan.png)
+
 
 ### 3. Sử dụng ngoại vi
  
