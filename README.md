@@ -1,6 +1,6 @@
 # Bài 1: Setup KeilC - stm32f103c8
 
-## VD: Blink Led PC13 -> thanh ghi
+## VD: Blink Led PC13 bằng thanh ghi
 (PC13: Chân 13 của GPIO C13)
 
 - **Cấp xung clock cho ngoại vi:** Cấp xung clock cho GPIO từ APB2 bằng thanh ghi RCC_APB2ENR.
