@@ -1,4 +1,4 @@
-# Bài 1: Setup KeilC - Sử dụng STM32F103C8
+# Bài 1: Setup KeilC - stm32f103c8
 
 ## VD: Blink Led PC13 -> thanh ghi
 (PC13: Chân 13 của GPIO C13)
