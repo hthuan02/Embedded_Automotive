@@ -3,7 +3,7 @@
 ## I. Interrupt (Ngắt)
 ### 1. Ngắt là gì?
 
-> Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính `main()` và thực thi **chuơng trình ngắt.**
+> Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài MCU. Nó yêu cầu MCU dừng chương trình chính `main()` và thực thi **chuơng trình ngắt.**
 
 **Các loại ngắt thông dụng:**
 
@@ -21,21 +21,21 @@
 
 Có 4 loại ngắt ngoài:
 
-- **LOW:** Kích hoạt ngắt liên tục khi chân ở mức thấp.
+- **LOW:** Kích hoạt ngắt khi chân ở mức thấp.
  
-- **HIGH:** Kích hoạt liên tục khi chân ở mức cao.
+- **HIGH:** Kích hoạt ngắt khi chân ở mức cao.
 
-- **Rising:** Kích hoạt khi trạng thái của chân chuyển từ thấp -> cao.
+- **Rising:** Ngắt khi trạng thái của chân chuyển từ thấp -> cao.
 
-- **Falling:** Kích hoạt khi trạng thái của chân chuyển từ cao -> thấp.
+- **Falling:** Ngắt khi trạng thái của chân chuyển từ cao -> thấp.
 
 ### 3. Ngắt Timer
 
 > Xảy ra khi giá trị trong thanh ghi đếm của timer tràn.
 >
-> Vì là ngắt nội trong MCU, phải reset giá trị thanh ghi timer để có thể tạo lần ngắt tiếp theo
+> Vì là ngắt nội trong MCU, phải reset giá trị thanh ghi timer để có thể tạo lần ngắt tiếp theo.
 
-(Nếu không reset giá trị thanh ghi đếm thì ngắt timer sẽ đếm từ 0-255 rồi mới reset về 0, chứ không reset từ giá trị chỉ định)
+(Nếu không reset giá trị thanh ghi đếm thì ngắt timer sẽ đếm từ 0-255 rồi mới reset về 0, chứ không reset khi đến giá trị chỉ định)
 
 ###  4. Ngắt truyền thông
 
@@ -75,7 +75,11 @@ _VD: Quy trình chạy của Program Counter:_
 
 ## II. Timer
 
-> Timer là 1 mạch digital logic đếm nhị phân (đếm bằng thanh ghi đếm)
+**đếm lên:** Từ 0 đến giá trị mình mong muốn sẽ tràn -> reset lại
+**đếm xuống:** Từ giá trị mong muốn đếm về 0, vượt qua 0 tràn-> reset ).
+
+> Timer là 1 mạch digital logic(đếm nhị phân), nó sẽ đếm sau mỗi chu kỳ clock nhất định
+>   
 > 
 >
 
