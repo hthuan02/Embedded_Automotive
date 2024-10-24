@@ -2,7 +2,70 @@
 
 ## 1. Ngắt là gì?
 
-> Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính và thực thi **chupwng trình ngắt.**
+> Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính `main()` và thực thi **chuơng trình ngắt.**
+
+**Các loại ngắt thông dụng:**
+
+- Mỗi ngắt có 1 trình phục vụ ngắt, mỗi  khi có ngắt thì trình phục vụ ngắt sẽ yêu cầu MCU thực thi hàm ngắt đó.
+
+- Các hàm ngắt có địa chỉ cố định trong bộ nhớ -> Vector Ngắt.
+
+- Các loại ngắt thông dụng: Reset, Ngắt ngoài, Timer, Ngắt truyền thông.
+
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/Ngat.png)
+
+**PC(Program Counter):** Là thanh ghi luôn trỏ đến ô nhớ chứa lệnh tiếp theo trong chương trình.
+
+## 2. Ngắt ngoài
+
+> Xảy ra khi có **thay đổi điện áp** trên các chân GPIO được **cấu hình làm ngõ vào ngắt.**
+
+Có 4 loại ngắt ngoài:
+
+- **LOW:** Kích hoạt ngắt liên tục khi chân ở mức thấp.
+ 
+- **HIGH:** Kích hoạt liên tục khi chân ở mức cao.
+
+- **Rising:** Kích hoạt khi trạng thái của chân chuyển từ thấp -> cao.
+
+- **Falling:** Kích hoạt khi trạng thái của chân chuyển từ cao -> thấp.
+
+## 3. Ngắt Timer
+
+> Xảy ra khi giá trị trong thanh ghi đếm của timer tràn.
+>
+> Vì là ngắt nội trong MCU, phải reset giá trị thanh ghi timer để có thể tạo lần ngắt tiếp theo
+
+(Nếu không reset giá trị thanh ghi đếm thì ngắt timer sẽ đếm từ 0-255 rồi mới reset về 0, chứ không reset từ giá trị chỉ định)
+
+##  4. Ngắt truyền thông
+
+> Xảy ra khi có sự kiện **truyền/nhận** dữ liệu giữa MCU với các thiết bị bên ngoài hay MCU với nhau.
+>
+> Các phương thức giao tiếp như: SPI, I2C, UART,... được sử dụng để ngát truyền thông.
+
+## 5. Độ ưu tiên ngắt
+
+>  Độ ưu tiên ngắt sẽ khác nhau ở mỗi ngắt.
+>
+>  Khi có nhiều ngắt xảy ra đồng thời, ngắt nào có độ ưu tiên cao hơn thì sẽ thực thi trước.
+
+Trong STM32 ngắt có số ưu tiên thấp thì độ ưu tiên càng cao.
+
+![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/DO_UU_TIEN.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Bài 4: Communication Protocols
