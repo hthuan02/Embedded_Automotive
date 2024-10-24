@@ -75,14 +75,17 @@ _VD: Quy trình chạy của Program Counter:_
 
 ## II. Timer
 
-**đếm lên:** Từ 0 đến giá trị mình mong muốn sẽ tràn -> reset lại
-**đếm xuống:** Từ giá trị mong muốn đếm về 0, vượt qua 0 tràn-> reset ).
+**đếm lên:** Từ 0 đến giá trị mình mong muốn sẽ tràn -> reset lại.
 
-> Timer là 1 mạch digital logic(đếm nhị phân), nó sẽ đếm sau mỗi chu kỳ clock nhất định
->   
+**đếm xuống:** Từ giá trị mong muốn đếm về 0, vượt qua 0 tràn tới -1 -> reset.
+
+> Timer là 1 mạch digital logic(đếm nhị phân), nó sẽ đếm sau mỗi chu kỳ clock nhất định (đếm lên hoặc xuống).
 > 
+> Timer có thể hoạt động ở chế độ nhận xung clock từ tín hiệu ngoài, bộ dao động hoặc CPU. Có thể cấp xung vào 1 chân cho MCU và dùng xung đó điều khiển timer (tạo 1 nút nhấn, bộ đếm sẽ tăng lên sau mỗi lần nhấn nút).
 >
+> Timer có chế độ khác như PWM, định thời,...
 
+**STM32F103 có 7 timer**
 
 
 
