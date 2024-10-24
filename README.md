@@ -75,6 +75,8 @@ _VD: Quy trình chạy của Program Counter:_
 
 ## II. Timer
 
+### 1. Timer là gì?
+
 **đếm lên:** Từ 0 đến giá trị mình mong muốn sẽ tràn -> reset lại.
 
 **đếm xuống:** Từ giá trị mong muốn đếm về 0, vượt qua 0 tràn tới -1 -> reset.
@@ -86,6 +88,9 @@ _VD: Quy trình chạy của Program Counter:_
 > Timer có chế độ khác như PWM, định thời,...
 
 **STM32F103 có 7 timer**
+
+### 2. Cấu hình Timer
+
 
 
 
