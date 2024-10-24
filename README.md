@@ -1,3 +1,9 @@
+# Bài 3: Ngắt & Timer
+
+## 1. Ngắt là gì?
+
+> Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính và thực thi **chupwng trình ngắt.**
+
 
 # Bài 4: Communication Protocols
 
