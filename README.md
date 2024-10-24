@@ -1,7 +1,7 @@
 # Bài 3: Interrupt & Timer
 
 ## I. Interrupt (Ngắt)
-## 1. Ngắt là gì?
+### 1. Ngắt là gì?
 
 > Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính `main()` và thực thi **chuơng trình ngắt.**
 
@@ -15,7 +15,7 @@
 
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/Ngat.png)
 
-## 2. Ngắt ngoài
+### 2. Ngắt ngoài
 
 > Xảy ra khi có **thay đổi điện áp** trên các chân GPIO được **cấu hình làm ngõ vào ngắt.**
 
@@ -29,7 +29,7 @@ Có 4 loại ngắt ngoài:
 
 - **Falling:** Kích hoạt khi trạng thái của chân chuyển từ cao -> thấp.
 
-## 3. Ngắt Timer
+### 3. Ngắt Timer
 
 > Xảy ra khi giá trị trong thanh ghi đếm của timer tràn.
 >
@@ -37,13 +37,13 @@ Có 4 loại ngắt ngoài:
 
 (Nếu không reset giá trị thanh ghi đếm thì ngắt timer sẽ đếm từ 0-255 rồi mới reset về 0, chứ không reset từ giá trị chỉ định)
 
-##  4. Ngắt truyền thông
+###  4. Ngắt truyền thông
 
 > Xảy ra khi có sự kiện **truyền/nhận** dữ liệu giữa MCU với các thiết bị bên ngoài hay MCU với nhau.
 >
 > Các phương thức giao tiếp như: SPI, I2C, UART,... được sử dụng để ngát truyền thông.
 
-## 5. Độ ưu tiên ngắt
+### 5. Độ ưu tiên ngắt
 
 >  Độ ưu tiên ngắt sẽ khác nhau ở mỗi ngắt.
 >
@@ -58,12 +58,12 @@ _VD: Quy trình chạy của Program Counter:_
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/DO_UU_TIEN.png)
 
 ```
-   PC: 0x01 -> 0x02 -> 0x03 **pc:0x04: Lưu vào Stack(Last In - First Out)**
+   PC: 0x01 -> 0x02 -> 0x03 pc:0x04: Lưu vào Stack(Last In - First Out)
    // Ngắt truyền thông(UART)
-   PC: 0xD4 -> 0xD5 -> 0xD6 **pc:0xD7( Lưu vào Stack -> Đỉnh stack)**
+   PC: 0xD4 -> 0xD5 -> 0xD6 pc:0xD7( Lưu vào Stack -> Đỉnh stack)
 
    // Nngắt timer, do mức độ ưu tiên cao hơn, nên sẽ thực hiện hết ngắt này.
-   PC: 0xB2 -> 0xB3 ... 0xB9 **pc:**
+   PC: 0xB2 -> 0xB3 ... 0xB9 
 
    /* Sau khi xong ngắt mức độ ưu tiên cao nhất,
    *  PC trỏ đến đỉnh của stack.
@@ -73,7 +73,11 @@ _VD: Quy trình chạy của Program Counter:_
    PC: 0x04 -> 0x05 ... 0xA1
 ```
 
+## II. Timer
 
+> Timer là 1 mạch digital logic đếm nhị phân (đếm bằng thanh ghi đếm)
+> 
+>
 
 
 
