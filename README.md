@@ -1,5 +1,6 @@
-# Bài 3: Ngắt & Timer
+# Bài 3: Interrupt & Timer
 
+## I. Interrupt (Ngắt)
 ## 1. Ngắt là gì?
 
 > Ngắt là 1 sự kiện khẩn cấp xảy ra trong hoặc ngoài vi điều khiển. Nó yêu cầu MCU dừng chương trình chính `main()` và thực thi **chuơng trình ngắt.**
@@ -13,8 +14,6 @@
 - Các loại ngắt thông dụng: Reset, Ngắt ngoài, Timer, Ngắt truyền thông.
 
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/Ngat.png)
-
-**PC(Program Counter):** Là thanh ghi luôn trỏ đến ô nhớ chứa lệnh tiếp theo trong chương trình.
 
 ## 2. Ngắt ngoài
 
@@ -52,10 +51,27 @@ Có 4 loại ngắt ngoài:
 
 Trong STM32 ngắt có số ưu tiên thấp thì độ ưu tiên càng cao.
 
+
+**PC(Program Counter):** Là thanh ghi luôn trỏ đến ô nhớ chứa lệnh tiếp theo trong chương trình.
+
+_VD: Quy trình chạy của Program Counter:_
 ![](https://github.com/hthuan02/Embedded_Automotive/blob/main/Bai3_Interrupt_Timer/img/DO_UU_TIEN.png)
 
+```
+   PC: 0x01 -> 0x02 -> 0x03 **pc:0x04: Lưu vào Stack(Last In - First Out)**
+   // Ngắt truyền thông(UART)
+   PC: 0xD4 -> 0xD5 -> 0xD6 **pc:0xD7( Lưu vào Stack -> Đỉnh stack)**
 
+   // Nngắt timer, do mức độ ưu tiên cao hơn, nên sẽ thực hiện hết ngắt này.
+   PC: 0xB2 -> 0xB3 ... 0xB9 **pc:**
 
+   /* Sau khi xong ngắt mức độ ưu tiên cao nhất,
+   *  PC trỏ đến đỉnh của stack.
+   *  PC trỏ đáy của stack.
+   */
+   PC: 0xD7 -> 0xD8 ... 0xE2
+   PC: 0x04 -> 0x05 ... 0xA1
+```
 
 
 
