@@ -6,14 +6,16 @@
 - **Cấp xung clock cho ngoại vi:** Cấp xung clock cho GPIO từ APB2 bằng thanh ghi RCC_APB2ENR.
 (RCC: Module đang làm việc; APB: Tên đường bus; 2ENR: Chức năng ngoại vi)
 
-- **Cấu hình chân ngoại vi:** Cấu hình chế độ chân, sử dụng thanh ghi GPIOx_CRL và GPIOx_CRH để cấu hình chân PC13 làm ngõ ra Push-Pull, tốc độ 50MHz.
-
+- **Cấu hình chế độ chân ngoại vi:** Sử dụng 2 thanh ghi GPIOx_CRL và GPIOx_CRH để cấu hình chân PC13 làm ngõ ra Push-Pull, tốc độ 50MHz.
+▶️Một GPIO có 16 chân, chia 2 thanh ghi CRL: 0-7; CRH: 8-15.
+ 
 - **Sử dụng ngoại vi:** Điều khiển LED: Sử dụng thanh ghi GPIOx_ODR để điều khiển LED nhấp nháy qua mã 
 
-_VD:_
+_VD: Code_
 ```c
    RCC->APB2ENR |= RCC_APB2ENR_IOPCEN; // Cap clock cho ngoai vi
 ```
+
 
 
 # Bài 2: GPIO
